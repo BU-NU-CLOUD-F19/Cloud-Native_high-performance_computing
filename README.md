@@ -79,9 +79,12 @@ Write an Kubernetes “operator” using Golang, to make lustre available into K
 ## 5. Acceptance criteria
 
 The minimum acceptance criteria is to have “Lustre” up and running with Kubernetes cluster
-Have YML scripts to easily bring up and tear down the infrastructure
-Configure Luster to run with Kubernetes
-Write an Operator learning from Rook framework
+
+* Have YML scripts to easily bring up and tear down the infrastructure
+
+* Configure Luster to run with Kubernetes
+
+* Write an Operator learning from Rook framework
 
 ---
 
