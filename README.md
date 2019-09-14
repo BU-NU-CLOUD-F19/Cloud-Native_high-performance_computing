@@ -73,6 +73,7 @@ Lustre: is an open-source, distributed parallel file system software platform de
 <img src="images/css6620 diagram.jpg?raw=true"/>
 
 Write an Kubernetes “operator” using Golang, to make lustre available into Kubernetes nodes and have features to handle node failures or node scalability based on usage. Will make use of “Rook” framework for file-storage on Kubernetes.
+
 ---
 
 ## 5. Acceptance criteria
