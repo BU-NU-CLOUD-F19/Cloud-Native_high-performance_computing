@@ -36,11 +36,11 @@ We are mainly targeting the HPC community members, or anyone who uses the Lustre
 
 * Write code in Go to implement an operator in Kubernetes which supports Lustre
 
-         * Handle node failures gracefully
+    * Handle node failures gracefully
 
 * Users may add/remove Kubernetes nodes.
 
-            * The size of the “Luster cluster” is elastic.
+    * The size of the “Luster cluster” is elastic.
 
     * Integrate HPC hardware (RDMA/infiniband).
 
