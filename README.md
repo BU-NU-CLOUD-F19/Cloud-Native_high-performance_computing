@@ -4,6 +4,13 @@
 
 ## 1. Vision and Goals Of The Project:
 
+Cloud-native is an approach to building and running applications that exploits the advantages of the cloud computing delivery model. Cloud-native is about how applications are created and deployed, not where. These systems are portable across different clouds. 
+Cloud native systems typically use Kubernetes (k8s) which provides a reliable and scalable platform for running containerized workloads. 
+The vision of this project is to build a user-friendly system to run High Performing Computing systems, such as Lustre in Kubernetes. 
+
+The Lustre file system is a very popular parallel distributed file system used in a wide range of HPC environments, small to large, such as oil and gas, seismic processing, the movie industry, and scientific research to address a common problem they all have and that is the ever increasing large amounts of data being created and needing to be processed in a timely manner. In fact it is the most widely used file system by the world’s Top 500 HPC sites. The project would enable one of the most popular high-performance computing (HPC) file system to be portable across different cloud solutions.
+
+----
 Build a user-friendly system to run Lustre in Kubernetes, enabling the most popular high-performance computing (HPC) file system to be portable across different cloud solutions
 
 * Use “libvirt” as the underlying technology to run Lustre within Kubernetes’ containers
