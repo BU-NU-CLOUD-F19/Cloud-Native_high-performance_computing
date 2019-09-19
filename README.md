@@ -7,7 +7,7 @@
 The cloud is helping organizations connect people, data, and processes in new ways to embrace the possibilities enabled by modern technologies. To succeed in a digital-first world, business leaders are bringing business and IT closer together and optimizing processes to create value, but it’s not enough to rehost applications in the cloud. The goal is to be cloud-native.
 
 Cloud-native is an approach to building and running applications that exploits the advantages of the cloud computing delivery model. Cloud-native is about how applications are created and deployed, not where. These systems are developed as microservices running in the containers which makes them portable across different clouds so that can be easily moved between AWS, Azure, or other cloud providers.
-Having a cloud native architecture maximize resilience, manageability, and scalability.
+Having a cloud native architecture maximizes resiliency, manageability, and scalability.
 
 A high-performance computer (HPC system) is a tool used by computational scientists and engineers to solve problems which require high computing resources or time. HPC systems range in size from the equivalent of just a few personal computers to tens, or even hundreds of thousands of them. 
 
