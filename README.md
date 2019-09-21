@@ -1,42 +1,24 @@
----
-
 ## Project Description
 
 ## 1. Vision and Goals Of The Project:
 
-The cloud helps organizations connect people, data, and processes in new ways to embrace the possibilities enabled by modern technologies. To succeed in a digital-first world, business leaders are bringing business and IT closer together and optimizing processes to create value, but it’s not enough to rehost applications in the cloud. The goal is to be cloud-native.
+Build a command-line script to automate running Lustre in Kubernetes, which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of Lustre components (MGS, MDS, OSS). High-level goals of the project include: Build a user-friendly system to run Lustre in Kubernetes, enabling the most popular high-performance computing (HPC) file system to be portable across different cloud solutions
 
-Cloud-native is an approach to build and run applications that exploit the advantages of the cloud computing delivery model. Cloud-native is about how applications are created and deployed, not where. Such systems are developed as microservices running in containers. This makes the applications portable across different clouds so that can be easily moved between AWS, Azure, or other cloud providers.
-Having a cloud native architecture maximizes resiliency, manageability, and scalability. <locked in> <portable api>
+- Provide a simple, user-friendly command-line interface to setup Lustre on Kubernetes
 
-A high-performance computer (HPC system) is a tool used by scientists and engineers to solve problems which require high computing resources or time. HPC systems range in size from the equivalent of just a few personal computers to tens, or even hundreds of thousands of them. 
+- Support the ability to add or remove Lustre nodes (hosted on Kubernetes) through scripts / tools
 
-Cloud native systems typically use Kubernetes (k8s) which provides a reliable and scalable platform for running containerized workloads.
-The vision of this project is to build a user-friendly system to run High Performing Computing systems, such as Lustre in Kubernetes. 
-
-The Lustre file system is a very popular parallel distributed file system used in a wide range of HPC environments, small to large, such as oil and gas, seismic processing, the movie industry, and scientific research to address a common problem they all have and that is the ever increasing large amounts of data being created and needing to be processed in a timely manner. In fact it is the most widely used file system by the world’s Top 500 HPC sites. The project would enable one of the most popular high-performance computing (HPC) file system to be portable across different cloud solutions.
-
-----
-Build a command-line script to automate running Lustre in Kubernetes, which provide protable APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features to incorporate <cloud native==no lock in, portable API> resilience to failures and scaling of Lustre components (MGS, MDS, OSS). High-level goals of the project include: Build a user-friendly system to run Lustre in Kubernetes, enabling the most popular high-performance computing (HPC) file system to be portable across different cloud solutions
-
-
-* Provide a simple, user-friendly command-line interface to setup Lustre on Kubernetes
-
-* Support the ability to add or remove Lustre nodes (hosted on Kubernetes) through scripts / tools
-
-* Leverage the “Rook” framework to develop Kubernetes operator providing features of auto-scaling and resilience to failures of Lustre components (MGS, MDS, OSS) on the cloud.
+- Leverage the “Rook” framework to develop Kubernetes operator providing features of auto-scaling and resilience to failures of Lustre components (MGS, MDS, OSS) on the cloud.
 
 ## 2. Users/Personas Of The Project:
 
 Cloud-native HPC with Lustre will be used by two major groups within the HPC community: 
 
-Technical customers:  scientists and engineers who need to perform number crunching, including climate prediction, protein folding simulations, oil and gas discovery, defense and aerospace work, automotive design, financial forecasting, etc.
+- Technical customers:  scientists and engineers who need to perform number crunching, including climate prediction, protein folding simulations, oil and gas discovery, defense and aerospace work, automotive design, financial forecasting, etc.
 
-Enterprise customers: encompasses the corporate data center, including processing customer records, inventory management, and employee details.
+- Enterprise customers: encompasses the corporate data center, including processing customer records, inventory management, and employee details.
 
-Lustre is used among high-performance computing researchers, and Cloud-native HPC will make it easier for them to use with cloud providers like AWS.
-
----
+Lustre is used among high-performance computing researchers, and Cloud-native HPC will make it easier for them to use with multiple cloud providers like AWS, GCP, Azure.
 
 ## 3. Scope and Features Of The Project
 
@@ -100,7 +82,7 @@ Lustre components:
 
 Rook: a storage orchestrator of Kubernetes. It automates the following processes: deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management. As a result, it turns the distributed storage system into self-managing, self-scaling and self-healing systems.
 
-Kubevirt: a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh <necessary because Lusture has kernel drivers!>
+Kubevirt: a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh (necessary because Lusture has kernel drivers!)
 
 ### Goal of the project
 
