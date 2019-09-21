@@ -2,13 +2,13 @@
 
 ## 1. Vision and Goals Of The Project:
 
-Build a command-line script to automate running Lustre in Kubernetes, which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of Lustre components (MGS, MDS, OSS). High-level goals of the project include: Build a user-friendly system to run Lustre in Kubernetes, enabling the most popular high-performance computing (HPC) file system to be portable across different cloud solutions
+Build a command-line script to automate running Lustre in Kubernetes, which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of Lustre components (MGS, MDS, OSS). High-level goals of the project include: 
 
 - Provide a simple, user-friendly command-line interface to setup Lustre on Kubernetes
 
 - Support the ability to add or remove Lustre nodes (hosted on Kubernetes) through scripts / tools
 
-- Leverage the “Rook” framework to develop Kubernetes operator providing features of auto-scaling and resilience to failures of Lustre components (MGS, MDS, OSS) on the cloud.
+- Leverage the “Rook” framework to develop Kubernetes operator providing features of bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
 
 ## 2. Users/Personas Of The Project:
 
@@ -18,10 +18,11 @@ Cloud-native HPC with Lustre will be used by two major groups within the HPC com
 
 - Enterprise customers: encompasses the corporate data center, including processing customer records, inventory management, and employee details.
 
-Lustre is used among high-performance computing researchers, and Cloud-native HPC will make it easier for them to use with multiple cloud providers like AWS, GCP, Azure.
+Lustre is used among high-performance computing researchers and Cloud-native HPC will make it easier for them to use with multiple cloud providers like AWS, GCP, Azure.
 
-## 3. Scope and Features Of The Project
+## 3. Scope and Features Of The Project:
 
+---
 * Make Lustre portable, by integrating it into Kubernetes.
 
     * Set up Lustre without Kubernetes
