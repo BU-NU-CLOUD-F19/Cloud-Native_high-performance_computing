@@ -22,72 +22,63 @@ Lustre is used among high-performance computing researchers and Cloud-native HPC
 
 ## 3. Scope and Features Of The Project:
 
----
-* Make Lustre portable, by integrating it into Kubernetes.
+Command-Line interface to automate running Lustre in Kubernetes.
 
-* Make Lustre’s feature set on par with other file systems supported within the rook framework
+- Easy-to-use interface for setting up all the Lustre components (MGS, MDS, OSS) on Kubernetes
 
-    * Write code in Go to implement an operator in Kubernetes which supports Lustre
+- Ability to grow/expand any Lustre component:
+   1. Creates new instance on the cloud (MOC, AWS, Azure, GCP etc.)
+   2. Install KubeVirt on the instance to support Lustre to run within a container
+   3. Setup the requested Lustre component (MGS, MDS, OSS)
+   4. Join this instance setup to already existing Lustre configuration
+   
+- Ability to shrink/destroy any Lustre component:
+   1. Remove the requested component (MGS, MDS, OSS) from existing Lustre configuration
+   2. Delete the instance from the cloud (MOC, AWS, Azure, GCP etc.) and return the resources 
 
-        * Handle node failures gracefully
+- Create a Github Wiki with all the documentations for the open-source community to enable easy setup and future enhancements to the project
 
-        * Users may add/remove Kubernetes nodes.
-
-    * Integrate HPC hardware (RDMA/infiniband).
-
-* Create yml scripts that make the system setup easy to use;
-
-    * To easily create and tear down lustre systems
-
-    * To invoke add/remove Kubernetes nodes by user
-
-* Make a Github site with the documentation for the open-source community  
-
----
+ (Below needs more investigation, will be clarified in further sprints)
+- Leverage the Rook framework to create a Kubernetes operator to provide features of bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
+- Refer ceph for understanding the use-case for utilizing Rook framework and take inspiration for implementing similar feature of Lustre
 
 ## 4. Solution Concept
 
 ### Global Architectural Structure Of the Project
 
-Container: Lightweight virtualization of runtime environment at the application level. It create isolation for different applications that share the OS and portable across clouds and OS distributions since it’s decoupled from the underlying infrastructure.
+**Container:** Lightweight virtualization of runtime environment at the application level. It create isolation for different applications that share the OS and portable across clouds and OS distributions since it’s decoupled from the underlying infrastructure.
 
-Kubernetes: a portable, extensible, open-source platform for managing containerized workloads and services which facilitates both declarative configuration and automation. It abstracts away the hardware and exposes the whole data center as a single computational resource.
+**Kubernetes:** a portable, extensible, open-source platform for managing containerized workloads and services which facilitates both declarative configuration and automation. It abstracts away the hardware and exposes the whole data center as a single computational resource.
 
-Pod: Kubernetes doesn’t run containers directly; instead it wraps one or more containers into a higher-level structure called a pod. Any containers in the same pod will share the same resources and local network. Containers can easily communicate with other containers in the same pod as though they were on the same machine while maintaining a degree of isolation from others. Pods are the basic unit of replications in Kubernetes.
+**Pod:** Kubernetes doesn’t run containers directly; instead it wraps one or more containers into a higher-level structure called a pod. Any containers in the same pod will share the same resources and local network. Containers can easily communicate with other containers in the same pod as though they were on the same machine while maintaining a degree of isolation from others. Pods are the basic unit of replications in Kubernetes.
 
-Kubernetes master: make decisions about cluster (e.g. scheduling), detect and respond to cluster events (e.g. restart a new pod when the old one is killed). Its components include apiserver, etcd, scheduler and controller manager.
+**Kubernetes master:** make decisions about cluster (e.g. scheduling), detect and respond to cluster events (e.g. restart a new pod when the old one is killed). Its components include apiserver, etcd, scheduler and controller manager.
 
-Kubernetes node: maintain running pods (a container wrapper, unit of replication of Kubernetes operation) and providing runtime environment. It consists of kubelet (the agent that run the node and make sure containers running in pods), kube-proxy (network proxy that mains network rules on nodes) and container run time.
+**Kubernetes node:** maintain running pods (a container wrapper, unit of replication of Kubernetes operation) and providing runtime environment. It consists of kubelet (the agent that run the node and make sure containers running in pods), kube-proxy (network proxy that mains network rules on nodes) and container run time.
 
-Lustre: is an open-source, distributed parallel file system software platform designed for scalability, high-performance, and high-availability. Lustre is purpose-built to provide a coherent, global POSIX-compliant namespace for very large scale computer infrastructure, including the world's largest supercomputer platforms. It can support hundreds of petabytes of data storage and hundreds of gigabytes per second in simultaneous, aggregate throughput. Some of the largest current installations have individual file systems in excess of fifty petabytes of usable capacity, and have reported throughput speeds exceeding one terabyte/sec
+**Lustre:** is an open-source, distributed parallel file system software platform designed for scalability, high-performance, and high-availability. Lustre is purpose-built to provide a coherent, global POSIX-compliant namespace for very large scale computer infrastructure, including the world's largest supercomputer platforms. It can support hundreds of petabytes of data storage and hundreds of gigabytes per second in simultaneous, aggregate throughput. Some of the largest current installations have individual file systems in excess of fifty petabytes of usable capacity, and have reported throughput speeds exceeding one terabyte/sec
 
-Lustre components:
+### Lustre components:
  
-* Metadata Servers (MDS)- The MDS makes metadata stored in one or more MDTs available to Lustre clients. Each MDS manages the names and directories in the Lustre file system(s) and provides network request handling for one or more local MDTs.
+**Metadata Servers (MDS):** The MDS makes metadata stored in one or more MDTs available to Lustre clients. Each MDS manages the names and directories in the Lustre file system(s) and provides network request handling for one or more local MDTs.
  
-* Metadata Targets (MDT) - For Lustre software release 2.3 and earlier, each file system has one MDT. The MDT stores metadata (such as filenames, directories, permissions and file layout) on storage attached to an MDS. Each file system has one MDT. An MDT on a shared storage target can be available to multiple MDSs, although only one can access it at a time. If an active MDS fails, a standby MDS can serve the MDT and make it available to clients. This is referred to as MDS failover.
+**Metadata Targets (MDT):** For Lustre software release 2.3 and earlier, each file system has one MDT. The MDT stores metadata (such as filenames, directories, permissions and file layout) on storage attached to an MDS. Each file system has one MDT. An MDT on a shared storage target can be available to multiple MDSs, although only one can access it at a time. If an active MDS fails, a standby MDS can serve the MDT and make it available to clients. This is referred to as MDS failover.
  
-* Object Storage Servers (OSS): The OSS provides file I/O service and network request handling for one or more local OSTs. Typically, an OSS serves between two and eight OSTs, up to 16 TiB each. A typical configuration is an MDT on a dedicated node, two or more OSTs on each OSS node, and a client on each of a large number of compute nodes.
+**Object Storage Servers (OSS):** The OSS provides file I/O service and network request handling for one or more local OSTs. Typically, an OSS serves between two and eight OSTs, up to 16 TiB each. A typical configuration is an MDT on a dedicated node, two or more OSTs on each OSS node, and a client on each of a large number of compute nodes.
  
-* Object Storage Target (OST): User file data is stored in one or more objects, each object on a separate OST in a Lustre file system. The number of objects per file is configurable by the user and can be tuned to optimize performance for a given workload.
+**Object Storage Target (OST):** User file data is stored in one or more objects, each object on a separate OST in a Lustre file system. The number of objects per file is configurable by the user and can be tuned to optimize performance for a given workload.
  
-* Lustre clients: Lustre clients are computational, visualization or desktop nodes that are running Lustre client software, allowing them to mount the Lustre file system.The Lustre client software provides an interface between the Linux virtual file system and the Lustre servers. The client software includes a management client (MGC), a metadata client (MDC), and multiple object storage clients (OSCs), one corresponding to each OST in the file system.
+**Lustre clients:** Lustre clients are computational, visualization or desktop nodes that are running Lustre client software, allowing them to mount the Lustre file system.The Lustre client software provides an interface between the Linux virtual file system and the Lustre servers. The client software includes a management client (MGC), a metadata client (MDC), and multiple object storage clients (OSCs), one corresponding to each OST in the file system.
 
-Rook: a storage orchestrator of Kubernetes. It automates the following processes: deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management. As a result, it turns the distributed storage system into self-managing, self-scaling and self-healing systems.
+**Rook:** a storage orchestrator of Kubernetes. It automates the following processes: deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management. As a result, it turns the distributed storage system into self-managing, self-scaling and self-healing systems.
 
-Kubevirt: a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh (necessary because Lusture has kernel drivers!). It is essential to our project since Lustre has kernel drivers and would need kubevirt to containerize.  
-
-### Goal of the project
+**Kubevirt:** a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh (necessary because Lusture has kernel drivers!). It is essential to our project since Lustre has kernel drivers and would need kubevirt to containerize.  
 
 <img src="images/css6620 diagram.jpg?raw=true"/>
 
-* Figure 1: project architecture. Lustre’s OSS/MDS process running inside VMs that ran by kubevirt and managed in containers. Containers are managed in the unit of pods in Kubernetes and each Kubernetes node could nest multiple pods. OSS pods and MDS pods are isolated from each, running inside different nodes.
+**Figure 1:** project architecture. Lustre’s MGS/MDS/OSS nodes running inside VMs that was setup by utlizing kubevirt and managed in containers. Containers are managed in the unit of pods in Kubernetes and each Kubernetes node could nest multiple pods. MSG pods, MDS pods and OSS pods are isolated from each, running inside different nodes.
 
 As shown in figure 1, the project will have an elastic Kubernetes cluster with a master node and multiple worker nodes. Each node will host pods that consist of containers that contain VM processes managed by kubevirt. 
-
-The goal of this project is to write a Kubernetes “operator” using Golang, to make lustre available into Kubernetes nodes and have features to handle node failures or node scalability based on usage. Will make use of the “Rook” framework for file-storage on Kubernetes.
-
----
 
 ## 5. Acceptance criteria
 
@@ -98,8 +89,6 @@ The minimum acceptance criteria is to have “Lustre” up and running with Kube
 * Configure Luster to run with Kubernetes
 
 * Write an Operator learning from Rook framework
-
----
 
 ## 6. Release Planning
 
