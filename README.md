@@ -40,7 +40,7 @@ Command-Line interface to automate running Lustre in Kubernetes.
 
  (Below needs more investigation, will be clarified in further sprints)
 - Leverage the Rook framework to create a Kubernetes operator to provide features of bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
-- Refer ceph for understanding the use-case for utilizing Rook framework and take inspiration for implementing similar feature of Lustre
+- Refer [Ceph](https://docs.ceph.com/docs/master/start/intro/) for understanding the use-case for utilizing Rook framework and take inspiration for implementing similar feature of Lustre
 
 ## 4. Solution Concept
 
