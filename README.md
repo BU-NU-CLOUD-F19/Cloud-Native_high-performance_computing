@@ -2,7 +2,7 @@
 
 ## 1. Vision and Goals Of The Project:
 
-Build a command-line script to automate running [Lustre](http://wiki.lustre.org/Main_Page) in [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/), which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of [Lustre components](#lustre-components) (MGS, MDS, OSS). High-level goals of the project include: 
+Build a command-line interface to automate running [Lustre](http://wiki.lustre.org/Main_Page) in [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/), which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of [Lustre components](#lustre-components) (MGS, MDS, OSS). High-level goals of the project include: 
 
 - Provide a simple, user-friendly command-line interface to setup Lustre on Kubernetes
 
@@ -18,7 +18,7 @@ Cloud-native HPC with Lustre will be used by two major groups within the HPC com
 
 - Enterprise customers: encompasses the corporate data center, including processing customer records, inventory management, and employee details.
 
-Lustre is used among high-performance computing researchers and Cloud-native HPC will make it easier for them to use with multiple cloud providers like AWS, GCP, Azure.
+Lustre is used among high-performance computing researchers and Cloud-native HPC will make it easier for them to use with multiple cloud providers like AWS, GCP, Azure. Hence, the command line interface will help the System Administrators to bootstrap the Lustre infrastructure on Kubernetes. The researchers will be able to access Lustre client hosted on Kubernetes to access Lustre filesystem. 
 
 ## 3. Scope and Features Of The Project:
 
