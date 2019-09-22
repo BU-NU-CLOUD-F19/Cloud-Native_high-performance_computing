@@ -25,14 +25,6 @@ Lustre is used among high-performance computing researchers and Cloud-native HPC
 ---
 * Make Lustre portable, by integrating it into Kubernetes.
 
-    * Set up Lustre without Kubernetes
-
-    * Set up Kubernetes on a single/multiple nodes
-
-    * Run Kubevirt with centos7 inside a container
-
-    * Run Lustre inside a centos7 container
-
 * Make Lustre’s feature set on par with other file systems supported within the rook framework
 
     * Write code in Go to implement an operator in Kubernetes which supports Lustre
@@ -83,7 +75,7 @@ Lustre components:
 
 Rook: a storage orchestrator of Kubernetes. It automates the following processes: deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management. As a result, it turns the distributed storage system into self-managing, self-scaling and self-healing systems.
 
-Kubevirt: a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh (necessary because Lusture has kernel drivers!)
+Kubevirt: a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh (necessary because Lusture has kernel drivers!). It is essential to our project since Lustre has kernel drivers and would need kubevirt to containerize.  
 
 ### Goal of the project
 
