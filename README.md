@@ -2,7 +2,7 @@
 
 ## 1. Vision and Goals Of The Project:
 
-Build a command-line script to automate running Lustre in Kubernetes, which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of Lustre components (MGS, MDS, OSS). High-level goals of the project include: 
+Build a command-line script to automate running Lustre in Kubernetes, which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of [Lustre components](#lustre-components) (MGS, MDS, OSS). High-level goals of the project include: 
 
 - Provide a simple, user-friendly command-line interface to setup Lustre on Kubernetes
 
@@ -56,6 +56,10 @@ Command-Line interface to automate running Lustre in Kubernetes.
 
 **Kubernetes node:** maintain running pods (a container wrapper, unit of replication of Kubernetes operation) and providing runtime environment. It consists of kubelet (the agent that run the node and make sure containers running in pods), kube-proxy (network proxy that mains network rules on nodes) and container run time.
 
+**Rook:** a storage orchestrator of Kubernetes. It automates the following processes: deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management. As a result, it turns the distributed storage system into self-managing, self-scaling and self-healing systems.
+
+**Kubevirt:** a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh (necessary because Lusture has kernel drivers!). It is essential to our project since Lustre has kernel drivers and would need kubevirt to containerize.  
+
 **Lustre:** is an open-source, distributed parallel file system software platform designed for scalability, high-performance, and high-availability. Lustre is purpose-built to provide a coherent, global POSIX-compliant namespace for very large scale computer infrastructure, including the world's largest supercomputer platforms. It can support hundreds of petabytes of data storage and hundreds of gigabytes per second in simultaneous, aggregate throughput. Some of the largest current installations have individual file systems in excess of fifty petabytes of usable capacity, and have reported throughput speeds exceeding one terabyte/sec
 
 ### Lustre components:
@@ -70,10 +74,6 @@ Command-Line interface to automate running Lustre in Kubernetes.
  
 **Lustre clients:** Lustre clients are computational, visualization or desktop nodes that are running Lustre client software, allowing them to mount the Lustre file system.The Lustre client software provides an interface between the Linux virtual file system and the Lustre servers. The client software includes a management client (MGC), a metadata client (MDC), and multiple object storage clients (OSCs), one corresponding to each OST in the file system.
 
-**Rook:** a storage orchestrator of Kubernetes. It automates the following processes: deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management. As a result, it turns the distributed storage system into self-managing, self-scaling and self-healing systems.
-
-**Kubevirt:** a tool that allows you to run a VM inside of a pod/container and have that VM be managed by Kubernetes. KubeVirt also allows virtual machines to benefit from features in Kubernetes, using the various storage classes, networking concepts from overlay networks to routes and load balancers, multi-tenancy, RBAC, integrated monitoring and logging, and service mesh (necessary because Lusture has kernel drivers!). It is essential to our project since Lustre has kernel drivers and would need kubevirt to containerize.  
-
 <img src="images/css6620 diagram.jpg?raw=true"/>
 
 **Figure 1:** project architecture. Lustre’s MGS/MDS/OSS nodes running inside VMs that was setup by utlizing kubevirt and managed in containers. Containers are managed in the unit of pods in Kubernetes and each Kubernetes node could nest multiple pods. MSG pods, MDS pods and OSS pods are isolated from each, running inside different nodes.
@@ -84,11 +84,11 @@ As shown in figure 1, the project will have an elastic Kubernetes cluster with a
 
 The minimum acceptance criteria is to have “Lustre” up and running with Kubernetes cluster
 
-* Have YML scripts to easily bring up and tear down the infrastructure
+- Provide scripts to easily bring up and tear down the Lustre infrastructure on Kubernetes
 
-* Configure Luster to run with Kubernetes
+- Provide ability to add or remove Lustre components on the existing setup
 
-* Write an Operator learning from Rook framework
+- Leverage Rook framework to build a Kubernetes operator for bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
 
 ## 6. Release Planning
 
@@ -114,3 +114,10 @@ Write Go code using the “operator” design pattern within the rook framework
   - TODO - ask professors about availability on Mass Open Cloud (MOC).
 - Choose a good high performance computing workload to demo. Commit clean code to git repository for the open source community to consume.
   - If successful, we’ll make an announcement and possibly give a talk at an open source conference.
+
+### Open questions and risks:
+
+
+- Setting up Lustre components on MOC
+- Using Kubevirt to run Luster components in a container (pod)
+- Understanding Rook framework and how Ceph leverages it for its filesystem
