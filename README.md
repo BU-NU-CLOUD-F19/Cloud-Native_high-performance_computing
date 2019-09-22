@@ -2,13 +2,13 @@
 
 ## 1. Vision and Goals Of The Project:
 
-Build a command-line script to automate running Lustre in Kubernetes, which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of [Lustre components](#lustre-components) (MGS, MDS, OSS). High-level goals of the project include: 
+Build a command-line script to automate running [Lustre](http://wiki.lustre.org/Main_Page) in [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/), which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of [Lustre components](#lustre-components) (MGS, MDS, OSS). High-level goals of the project include: 
 
 - Provide a simple, user-friendly command-line interface to setup Lustre on Kubernetes
 
 - Support the ability to add or remove Lustre nodes (hosted on Kubernetes) through scripts / tools
 
-- Leverage the “Rook” framework to develop Kubernetes operator providing features of bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
+- Leverage the [Rook](https://rook.io/docs/rook/v1.1/) framework to develop Kubernetes operator providing features of bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
 
 ## 2. Users/Personas Of The Project:
 
@@ -78,7 +78,8 @@ Command-Line interface to automate running Lustre in Kubernetes.
 
 **Figure 1:** project architecture. Lustre’s MGS/MDS/OSS nodes running inside VMs that was setup by utlizing kubevirt and managed in containers. Containers are managed in the unit of pods in Kubernetes and each Kubernetes node could nest multiple pods. MSG pods, MDS pods and OSS pods are isolated from each, running inside different nodes.
 
-As shown in figure 1, the project will have an elastic Kubernetes cluster with a master node and multiple worker nodes. Each node will host pods that consist of containers that contain VM processes managed by kubevirt. 
+The command-line interface will allow us to easily grow/shrink the Lustre components within the Kubernetes setup.
+Leveraging the Rook framework to build a Kubernetes operator will allow us to bootstrap, configure, scale and disaster recovery of Lustre components (MGS, MDS, OSS) on the Kubernetes.
 
 ## 5. Acceptance criteria
 
