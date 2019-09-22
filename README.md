@@ -115,7 +115,7 @@ Write Go code using the “operator” design pattern within the rook framework
 - Choose a good high performance computing workload to demo. Commit clean code to git repository for the open source community to consume.
   - If successful, we’ll make an announcement and possibly give a talk at an open source conference.
 
-### Open questions and risks:
+## 7. Open questions and risks:
 
 
 - Setting up Lustre components on MOC
