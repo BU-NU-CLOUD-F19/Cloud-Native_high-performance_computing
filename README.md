@@ -63,6 +63,11 @@ Command-Line interface to automate running Lustre in Kubernetes.
 **Lustre:** is an open-source, distributed parallel file system software platform designed for scalability, high-performance, and high-availability. Lustre is purpose-built to provide a coherent, global POSIX-compliant namespace for very large scale computer infrastructure, including the world's largest supercomputer platforms. It can support hundreds of petabytes of data storage and hundreds of gigabytes per second in simultaneous, aggregate throughput. Some of the largest current installations have individual file systems in excess of fifty petabytes of usable capacity, and have reported throughput speeds exceeding one terabyte/sec
 
 ### Lustre components:
+
+**Management Server (MGS):** The MGS is a global resource that can be associated with one or more Lustre file systems. It
+acts as a global registry for configuration information and service state. It does not participate in file system operations.
+
+**Management Target (MGT):** MGT is the management service storage target used to store configuration data.
  
 **Metadata Servers (MDS):** The MDS makes metadata stored in one or more MDTs available to Lustre clients. Each MDS manages the names and directories in the Lustre file system(s) and provides network request handling for one or more local MDTs.
  
