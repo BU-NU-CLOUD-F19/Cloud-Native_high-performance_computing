@@ -94,7 +94,7 @@ The minimum acceptance criteria is to have “Lustre” up and running with Kube
 
 - Provide ability to add or remove Lustre components on the existing setup
 
-- Leverage Rook framework to build a Kubernetes operator for bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
+- Leverage Rook framework to build a Kubernetes operator for bootstrapping, configuration, scaling and resilience to failures of Lustre components (MGS, MDS, OSS) on the cloud
 
 ## 6. Release Planning
 
