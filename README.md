@@ -127,3 +127,6 @@ Write Go code using the “operator” design pattern within the rook framework
 - Setting up Lustre components on MOC
 - Using Kubevirt to run Luster components in a container (pod)
 - Understanding Rook framework and how Ceph leverages it for its filesystem
+
+## 8. Demo slides:
+- [Demo 1 - 09/27/2019](https://docs.google.com/presentation/d/11-5E0pl9JrQ1s5jjbWnUuhI7mBM081c694kGdY1zb0s/edit?usp=sharing)
