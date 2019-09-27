@@ -2,9 +2,9 @@
 
 ## 1. Vision and Goals Of The Project:
 
-Build a command-line interface to automate running [Lustre](http://wiki.lustre.org/Main_Page) in [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/), which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of [Lustre components](#lustre-components) (MGS, MDS, OSS). High-level goals of the project include: 
+Build command-line Scripts to automate running [Lustre](http://wiki.lustre.org/Main_Page) in [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/), which provide APIs that enable the most popular high-performance computing (HPC) file system to be portable across different cloud platforms and minimize the disadvantage by vendor lock-in. We leverage cloud-native features such portable API and no cloud vendor lock-in, to incorporate resilience to failures and scaling of [Lustre components](#lustre-components) (MGS, MDS, OSS). High-level goals of the project include: 
 
-- Provide a simple, user-friendly command-line interface to setup Lustre on Kubernetes
+- Provide simple, user-friendly command-line scripts to setup Lustre on Kubernetes
 
 - Support the ability to add or remove Lustre nodes (hosted on Kubernetes) through scripts / tools
 
@@ -18,11 +18,11 @@ Cloud-native HPC with Lustre will be used by two major groups within the HPC com
 
 - Enterprise customers: encompasses the corporate data center, including processing customer records, inventory management, and employee details.
 
-Lustre is used among high-performance computing researchers and Cloud-native HPC will make it easier for them to use with multiple cloud providers like AWS, GCP, Azure. Hence, the command line interface will help the System Administrators to bootstrap the Lustre infrastructure on Kubernetes. The researchers will be able to access Lustre client hosted on Kubernetes to access Lustre filesystem. 
+Lustre is used among high-performance computing researchers and Cloud-native HPC will make it easier for them to use with multiple cloud providers like AWS, GCP, Azure. Hence, the command line scripts will help the System Administrators to bootstrap the Lustre infrastructure on Kubernetes. The researchers will be able to access Lustre client hosted on Kubernetes to access Lustre filesystem. 
 
 ## 3. Scope and Features Of The Project:
 
-Command-Line interface to automate running Lustre in Kubernetes.
+Command-Line Scripts to automate running Lustre in Kubernetes.
 
 - Easy-to-use interface for setting up all the Lustre components (MGS, MDS, OSS) on Kubernetes
 
@@ -83,7 +83,7 @@ acts as a global registry for configuration information and service state. It do
 
 **Figure 1:** project architecture. Lustre’s MGS/MDS/OSS nodes running inside VMs that was setup by utlizing kubevirt and managed in containers. Containers are managed in the unit of pods in Kubernetes and each Kubernetes node could nest multiple pods. MSG pods, MDS pods and OSS pods are isolated from each, running inside different nodes.
 
-The command-line interface will allow us to easily grow/shrink the Lustre components within the Kubernetes setup.
+The command-line scripts will allow us to easily grow/shrink the Lustre components within the Kubernetes setup.
 Leveraging the Rook framework to build a Kubernetes operator will allow us to bootstrap, configure, scale and disaster recovery of Lustre components (MGS, MDS, OSS) on the Kubernetes.
 
 ## 5. Acceptance criteria
