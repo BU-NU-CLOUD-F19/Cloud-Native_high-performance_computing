@@ -114,10 +114,14 @@ Demo on *9/27* - run simple lustre setup in kubernetes: cannot yet tolerate node
 
 Demo on *10/09* - Further setup in Kubernetes cluster: able to start centos VM with Kubevirt.
 
-**Future goals** (Sprint Planning *after* Phase 1): Remainder of course. Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
+**Future goals** 
+
+(Unfinished tasks *from* Demo 2): 
 
 - Start centos7 VM with Kubevirt inside Kubernetes cluster, Persistent Volume
 - Run lustre inside a centos7 container
+
+Remainder of course: Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
 
 Write Go code using the “operator” design pattern within the rook framework
 
