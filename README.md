@@ -98,7 +98,7 @@ The minimum acceptance criteria is to have “Lustre” up and running with Kube
 
 ## 6. Release Planning
 
-**Demo1 1**  (Finish by 09/27): setup lustre and kubernetes individually.
+**Demo1**  (Finish by 09/27): setup lustre and kubernetes individually.
 
 - Set up Lustre without kubernetes
 - Set up kubernetes on a single node without Lustre (e.g. laptop or single instance)
@@ -108,7 +108,7 @@ The minimum acceptance criteria is to have “Lustre” up and running with Kube
 
 Demo on *9/27* - run simple lustre setup in kubernetes: cannot yet tolerate node failures or handle elasticity.
 
-**Demo1 2**  (Finish by 10/09): setup multi-node kubernetes cluster, run virtual machine in Kubernetes with Kubevirt.
+**Demo2**  (Finish by 10/09): setup multi-node kubernetes cluster, run virtual machine in Kubernetes with Kubevirt.
 
 - Set up Minikube on single node and start virtual machine with Kubevirt
 - Set up Kubernetes cluster (without Minikube) on multiple nodes without Luster (1 master, 2 nodes)
@@ -116,7 +116,7 @@ Demo on *9/27* - run simple lustre setup in kubernetes: cannot yet tolerate node
 
 Demo on *10/09* - Further setup in Kubernetes cluster: able to start VM with Kubevirt.
 
-**Future ** goals (Sprint Planning *after* Phase 1): Remainder of course. Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
+**Future goals** (Sprint Planning *after* Phase 1): Remainder of course. Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
 
 - Start centos7 VM with Kubevirt inside Kubernetes cluster, Persistent Volume
 - Run lustre inside a centos7 container
