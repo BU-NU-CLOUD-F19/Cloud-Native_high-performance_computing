@@ -100,11 +100,9 @@ The minimum acceptance criteria is to have “Lustre” up and running with Kube
 
 **Demo1**  (Finish by 09/27): setup lustre and kubernetes individually.
 
-- Set up Lustre without kubernetes
-- Set up kubernetes on a single node without Lustre (e.g. laptop or single instance)
-- Run kubevirt with centos7 inside a container
-- Run lustre inside a centos7 container
-- Learn the rook system and understand how to write an “operator”
+- Set up Lustre without Kubernetes
+- Set up Kubernetes on a single node without Lustre (e.g. laptop or single instance)
+- Create a Kubernetes cluster with Minikube, start a testVM with Kubevirt on top of it
 
 Demo on *9/27* - run simple lustre setup in kubernetes: cannot yet tolerate node failures or handle elasticity.
 
@@ -114,7 +112,7 @@ Demo on *9/27* - run simple lustre setup in kubernetes: cannot yet tolerate node
 - Set up Kubernetes cluster (without Minikube) on multiple nodes without Luster (1 master, 2 nodes)
 - Start centos7 VM with Kubevirt inside Kubernetes cluster, without Persistent Volume
 
-Demo on *10/09* - Further setup in Kubernetes cluster: able to start VM with Kubevirt.
+Demo on *10/09* - Further setup in Kubernetes cluster: able to start centos VM with Kubevirt.
 
 **Future goals** (Sprint Planning *after* Phase 1): Remainder of course. Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
 
