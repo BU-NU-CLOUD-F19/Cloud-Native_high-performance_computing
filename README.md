@@ -98,18 +98,28 @@ The minimum acceptance criteria is to have “Lustre” up and running with Kube
 
 ## 6. Release Planning
 
-**Phase 1** goals (Finish by 09/26): setup lustre and kubernetes individually, then run lustre inside kubernetes.
+**Demo1 1**  (Finish by 09/27): setup lustre and kubernetes individually.
 
 - Set up Lustre without kubernetes
 - Set up kubernetes on a single node without Lustre (e.g. laptop or single instance)
-- Set up kubernetes on multiple nodes without Luster (4 MOC instances)
 - Run kubevirt with centos7 inside a container
 - Run lustre inside a centos7 container
 - Learn the rook system and understand how to write an “operator”
 
 Demo on *9/27* - run simple lustre setup in kubernetes: cannot yet tolerate node failures or handle elasticity.
 
-**Phase 2** goals (Sprint Planning *after* Phase 1): Remainder of course. Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
+**Demo1 2**  (Finish by 10/09): setup multi-node kubernetes cluster, run virtual machine in Kubernetes with Kubevirt.
+
+- Set up Minikube on single node and start virtual machine with Kubevirt
+- Set up Kubernetes cluster (without Minikube) on multiple nodes without Luster (1 master, 2 nodes)
+- Start centos7 VM with Kubevirt inside Kubernetes cluster, without Persistent Volume
+
+Demo on *10/09* - Further setup in Kubernetes cluster: able to start VM with Kubevirt.
+
+**Future ** goals (Sprint Planning *after* Phase 1): Remainder of course. Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
+
+- Start centos7 VM with Kubevirt inside Kubernetes cluster, Persistent Volume
+- Run lustre inside a centos7 container
 
 Write Go code using the “operator” design pattern within the rook framework
 
@@ -122,7 +132,6 @@ Write Go code using the “operator” design pattern within the rook framework
   - If successful, we’ll make an announcement and possibly give a talk at an open source conference.
 
 ## 7. Open questions and risks:
-
 
 - Setting up Lustre components on MOC
 - Using Kubevirt to run Luster components in a container (pod)
