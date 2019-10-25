@@ -114,12 +114,21 @@ Demo on *9/27* - run simple lustre setup in kubernetes: cannot yet tolerate node
 
 Demo on *10/09* - Further setup in Kubernetes cluster: able to start centos VM with Kubevirt.
 
+**Demo3**  (Finish by 10/25): setup Persistent Volume for Kubernetes pods, start lustre virtual machine in Kubernetes nodes with Kubevirt, explore benchmarking with lustre.
+
+- Start centos7 VM with Kubevirt inside Kubernetes cluster with Persistent Volume
+- Set up Lustre in Kubernetes cluster on multiple nodes (1 master, 2 nodes) without Luster
+- Benchmarking for Lustre on Kubernetes MOC (LNET)
+
+Demo on *10/25* - Finalize setup in Kubernetes cluster: able to do benchmarking on Lustre w/o Kubernetes.
+
 **Future goals** 
 
-(Unfinished tasks *from* Demo 2): 
+(Unfinished tasks *from* Demo 3): 
 
-- Start centos7 VM with Kubevirt inside Kubernetes cluster, Persistent Volume
-- Run lustre inside a centos7 container
+- Create Lustre Docker image (server, client) for easier deployment on Kubernetes
+- Evaluate more benchmarking tests 
+- Understand and setup Ceph with Rook framework on existing Kubernetes setup
 
 Remainder of course: Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
 
