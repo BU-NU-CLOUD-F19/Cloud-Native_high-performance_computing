@@ -117,7 +117,7 @@ Demo on *10/09* - Further setup in Kubernetes cluster: able to start centos VM w
 **Demo3**  (Finish by 10/25): setup Persistent Volume for Kubernetes pods, start lustre virtual machine in Kubernetes nodes with Kubevirt, explore benchmarking with lustre.
 
 - Start centos7 VM with Kubevirt inside Kubernetes cluster with Persistent Volume
-- Set up Lustre in Kubernetes cluster on multiple nodes (1 master, 2 nodes) without Luster
+- Set up Lustre in Kubernetes cluster on multiple nodes (1 master, 2 nodes)
 - Benchmarking for Lustre on Kubernetes MOC (LNET)
 
 Demo on *10/25* - Finalize setup in Kubernetes cluster: able to do benchmarking on Lustre w/o Kubernetes.
