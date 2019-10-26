@@ -1,0 +1,40 @@
+---
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachineInstance
+metadata:
+  labels:
+    special: key
+  name: vmi-centos7-lustre-mds2
+spec:
+  domain:
+    devices:
+      disks:
+      - disk:
+          bus: virtio
+        name: containerdisk
+      - disk:
+          bus: virtio
+        name: vol-mds
+      - disk:
+          bus: virtio
+        name: cloudinitdisk
+      rng: {}
+    machine:
+      type: ""
+    resources:
+      requests:
+        memory: 1024M
+  terminationGracePeriodSeconds: 0
+  volumes:
+  - name: vol-mds
+    persistentVolumeClaim:
+      claimName: vol-mds2
+  - containerDisk:
+      image: dlambrig/centos7:latest
+    name: containerdisk
+  - cloudInitNoCloud:
+      userData: |-
+        #cloud-config
+        password: centos
+        chpasswd: { expire: False }
+    name: cloudinitdisk
