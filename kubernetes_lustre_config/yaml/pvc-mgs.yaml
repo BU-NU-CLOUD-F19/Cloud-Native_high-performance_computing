@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: vol-mgs2
+  name: vol-mgs
 spec:
   accessModes:
     - ReadWriteMany

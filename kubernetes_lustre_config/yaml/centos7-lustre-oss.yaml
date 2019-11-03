@@ -36,7 +36,7 @@ spec:
     persistentVolumeClaim:
       claimName: vol-oss2
   - containerDisk:
-      image: dlambrig/centos7:latest
+      image: nakulvr/centos:lustre-server
     name: containerdisk
   - cloudInitNoCloud:
       userData: |

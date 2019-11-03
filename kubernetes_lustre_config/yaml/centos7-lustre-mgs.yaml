@@ -4,7 +4,7 @@ kind: VirtualMachineInstance
 metadata:
   labels:
     special: key
-  name: vmi-centos7-lustre-mgs2
+  name: vmi-centos7-lustre-mgs
 spec:
   domain:
     devices:
@@ -28,9 +28,9 @@ spec:
   volumes:
   - name: vol-mgs
     persistentVolumeClaim:
-      claimName: vol-mgs2
+      claimName: vol-mgs
   - containerDisk:
-      image: dlambrig/centos7:latest
+      image: nakulvr/centos:lustre-server
     name: containerdisk
   - cloudInitNoCloud:
       userData: |-
