@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-storage
   local:
-    path: /data/ost1
+    path: /pvc-data/ost1
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -19,5 +19,5 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - kubernetes-master 
+          - kubernetes-master2 
 
