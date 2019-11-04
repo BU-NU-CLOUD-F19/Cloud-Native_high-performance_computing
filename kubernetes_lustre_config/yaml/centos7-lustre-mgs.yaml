@@ -33,8 +33,6 @@ spec:
       image: nakulvr/centos:lustre-server
     name: containerdisk
   - cloudInitNoCloud:
-      userData: |-
-        #cloud-config
-        password: centos
-        chpasswd: { expire: False }
+      secretRef:
+        name: vmi-lustre-secret
     name: cloudinitdisk
