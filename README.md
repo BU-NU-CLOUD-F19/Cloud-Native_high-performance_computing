@@ -157,3 +157,4 @@ Write Go code using the “operator” design pattern within the rook framework
 
 - [Demo 3 - 10/24/2019](https://docs.google.com/presentation/d/1l06Gs6PNi8ent285efJvWWkberFa2y6y_yWkRt6yyko/edit?usp=sharing)
 
+- [Demo 4 - 11/08/2019](https://docs.google.com/presentation/d/1nprbX84neW7T0q9FsACQSAQ5SRDt5tJmumnnW_DR2Dg/)
