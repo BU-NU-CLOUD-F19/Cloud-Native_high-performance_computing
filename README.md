@@ -122,13 +122,22 @@ Demo on *10/09* - Further setup in Kubernetes cluster: able to start centos VM w
 
 Demo on *10/25* - Finalize setup in Kubernetes cluster: able to do benchmarking on Lustre w/o Kubernetes.
 
-**Future goals** 
-
-(Unfinished tasks *from* Demo 3): 
+**Demo4**  (Finish by 11/08): Creating Lustre server and client image; Lustre benchmarking
 
 - Create Lustre Docker image (server, client) for easier deployment on Kubernetes
 - Evaluate more benchmarking tests 
 - Understand and setup Ceph with Rook framework on existing Kubernetes setup
+
+Demo on *11/08* .
+
+**Future goals** 
+
+(Unfinished tasks *from* Demo 4): 
+
+- Deep-dive into Rook framework
+- Modify Ceph operator understand how changes are reflected
+- Create an initial Lustre setup with Rook
+
 
 Remainder of course: Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
 
