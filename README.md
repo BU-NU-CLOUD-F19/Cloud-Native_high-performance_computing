@@ -46,6 +46,8 @@ Command-Line Scripts to automate running Lustre in Kubernetes.
 
 ### Global Architectural Structure Of the Project
 
+<img src="images/kubernetes.png?raw=true"/>
+
 **Container:** Lightweight virtualization of runtime environment at the application level. It create isolation for different applications that share the OS and portable across clouds and OS distributions since it’s decoupled from the underlying infrastructure.
 
 **Kubernetes:** a portable, extensible, open-source platform for managing containerized workloads and services which facilitates both declarative configuration and automation. It abstracts away the hardware and exposes the whole data center as a single computational resource.
