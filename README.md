@@ -81,7 +81,9 @@ acts as a global registry for configuration information and service state. It do
  
 **Lustre clients:** Lustre clients are computational, visualization or desktop nodes that are running Lustre client software, allowing them to mount the Lustre file system.The Lustre client software provides an interface between the Linux virtual file system and the Lustre servers. The client software includes a management client (MGC), a metadata client (MDC), and multiple object storage clients (OSCs), one corresponding to each OST in the file system.
 
-<img src="images/css6620 diagram.jpg?raw=true"/>
+<img src="images/cluster.png?raw=true"/>
+
+<img src="images/new_diagram.png?raw=true"/>
 
 **Figure 1:** project architecture. Lustre’s MGS/MDS/OSS nodes running inside VMs that was setup by utlizing kubevirt and managed in containers. Containers are managed in the unit of pods in Kubernetes and each Kubernetes node could nest multiple pods. MSG pods, MDS pods and OSS pods are isolated from each, running inside different nodes.
 
