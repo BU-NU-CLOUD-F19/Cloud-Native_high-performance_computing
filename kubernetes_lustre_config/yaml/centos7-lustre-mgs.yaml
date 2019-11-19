@@ -4,7 +4,7 @@ kind: VirtualMachineInstance
 metadata:
   labels:
     special: key
-    name: lustre
+    expose: me
   name: lustre-mgs
 spec:
   hostname: lustre-mgs
@@ -46,7 +46,7 @@ metadata:
   name: default-lustre
 spec:
   selector:
-    lustre: mgs
+    expose: me
   clusterIP: None
   ports:
   - name: foo # Actually, no port is needed.

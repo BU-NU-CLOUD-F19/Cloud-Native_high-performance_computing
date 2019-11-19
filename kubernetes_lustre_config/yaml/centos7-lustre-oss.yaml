@@ -4,7 +4,7 @@ kind: VirtualMachineInstance
 metadata:
   labels:
     special: key
-    name: lustre
+    expose: me
   name: lustre-oss
 spec:
   hostname: lustre-oss
