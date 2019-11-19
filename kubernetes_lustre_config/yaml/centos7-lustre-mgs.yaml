@@ -4,8 +4,11 @@ kind: VirtualMachineInstance
 metadata:
   labels:
     special: key
-  name: vmi-centos7-lustre-mgs
+    name: lustre
+  name: lustre-mgs
 spec:
+  hostname: lustre-mgs
+  subdomain: default-lustre
   domain:
     devices:
       disks:
@@ -36,3 +39,16 @@ spec:
       secretRef:
         name: vmi-lustre-secret
     name: cloudinitdisk
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: default-lustre
+spec:
+  selector:
+    lustre: mgs
+  clusterIP: None
+  ports:
+  - name: foo # Actually, no port is needed.
+    port: 1234
+    targetPort: 1234
