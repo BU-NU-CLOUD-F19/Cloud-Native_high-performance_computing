@@ -37,7 +37,7 @@ spec:
     name: containerdisk
   - cloudInitNoCloud:
       secretRef:
-        name: vmi-lustre-secret
+        name: vmi-lustre-mgs-secret
     name: cloudinitdisk
 ---
 apiVersion: v1

@@ -28,5 +28,5 @@ spec:
     name: containerdisk
   - cloudInitNoCloud:
       secretRef:
-        name: vmi-lustre-secret
+        name: vmi-lustre-client-secret
     name: cloudinitdisk
