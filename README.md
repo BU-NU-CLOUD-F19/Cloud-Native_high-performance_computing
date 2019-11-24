@@ -38,9 +38,10 @@ Command-Line Scripts to automate running Lustre in Kubernetes.
 
 - Create a Github Wiki with all the documentations for the open-source community to enable easy setup and future enhancements to the project
 
- (Below needs more investigation, will be clarified in further sprints)
-- Leverage the Rook framework to create a Kubernetes operator to provide features of bootstrapping, configuration, scaling and disaster recovery of Lustre components (MGS, MDS, OSS) on the cloud
-- Refer [Ceph](https://docs.ceph.com/docs/master/start/intro/) for understanding the use-case for utilizing Rook framework and take inspiration for implementing similar feature of Lustre
+We are continuing to build on our work. 
+
+- Our next steps are to leverage the Rook framework to implement features such as autoscaling and tolerance to node failures. - We plan to develop a Kubernetes operator integrated within Rook framework, which would also interact with the KubeVirt operator for provisioning VMs for configuring the Lustre infrastructure. 
+- We hope to collaborate with the Rook community and make an official release for public use.
 
 ## 4. Solution Concept
 
