@@ -1,12 +1,10 @@
 ### Demo steps for creating Lustre's MGS component on K8s
 0. Configure 'kubectl' and 'K8s cluster'
 
-
+```
 Install kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl/ 
-
-
 Create K8s cluster - https://docs.projectcalico.org/v3.9/getting-started/kubernetes/
-
+```
 1. Create Persistent Volume for Lustre's MGS component
 ```
 kubectl create -f pv-mgs.yaml
