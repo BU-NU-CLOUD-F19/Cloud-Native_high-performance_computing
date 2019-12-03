@@ -5,7 +5,7 @@
 Install kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl/ 
 Create K8s cluster - https://docs.projectcalico.org/v3.9/getting-started/kubernetes/
 ```
-#### Step 1. Create K8s secret for MGS from it's startup script
+#### Step 1. Create K8s secret for Lustre's MGS component from it's startup script
 ```
 kubectl create secret generic vmi-lustre-mgs-secret --from-file=userdata=lustre-mgs-startup.sh
 ```
