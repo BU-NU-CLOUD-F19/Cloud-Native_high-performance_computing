@@ -146,28 +146,14 @@ Demo on *11/22* .
 **Future goals** 
 
 - Provide more flexibility to bootstrap Lustre 
+- Pitch the idea to Rook community
 - Explore KubeVirt and if it could be utlizied within Rook for Lustre
-- Clean-up existing configurations for Lustre infrastructure
 - Seeking to present at Linux Storage & Filesystems Conference (Vault 2020)
-
-
-Remainder of course: Make Lustre’s feature set on par with other file systems supported within the rook framework. Desirable features are elasticity, redundancy on failure, and ease of use. Stretch goal is to integrate HPC hardware (RDMA/infiniband).
-
-Write Go code using the “operator” design pattern within the rook framework
-
-- Node failure
-- Manual adding/removing nodes (invoked by user with yml scripts)
-- “Elegant” yml scripts to easily create and tear down lustre systems
-- Time and equipment permitting, use RDMA/infiniband.
-  - TODO - ask professors about availability on Mass Open Cloud (MOC).
-- Choose a good high performance computing workload to demo. Commit clean code to git repository for the open source community to consume.
-  - If successful, we’ll make an announcement and possibly give a talk at an open source conference.
 
 ## 7. Open questions and risks:
 
-- Setting up Lustre components on MOC
-- Using Kubevirt to run Luster components in a container (pod)
 - Understanding Rook framework and how Ceph leverages it for its filesystem
+- Building an operator within Rook framework to interact with KubeVirt
 
 ## 8. Demo slides:
 - [Demo 1 - 09/27/2019](https://docs.google.com/presentation/d/11-5E0pl9JrQ1s5jjbWnUuhI7mBM081c694kGdY1zb0s/edit?usp=sharing)
