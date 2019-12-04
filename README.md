@@ -183,3 +183,6 @@ Write Go code using the “operator” design pattern within the rook framework
 - [Demo 5 - 11/22/2019](https://docs.google.com/presentation/d/1_NF0_1Ef_oC6dsKKs7F9-0UFvqM82DBtuqp75yzzdFg/edit?usp=sharing)
 
 - [Final Demo - 12/04/2019](https://youtu.be/jqhDoW_2EKk)
+
+## 9. Steps for Installation:
+Follow the Project's Wiki page for step-by-step instructions: [https://github.com/BU-NU-CLOUD-F19/Cloud-Native_high-performance_computing/wiki/Installation-steps](https://github.com/BU-NU-CLOUD-F19/Cloud-Native_high-performance_computing/wiki/Installation-steps)
