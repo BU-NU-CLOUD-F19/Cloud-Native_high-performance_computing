@@ -185,6 +185,6 @@ Write Go code using the “operator” design pattern within the rook framework
 - [Final Demo - 12/04/2019](https://youtu.be/jqhDoW_2EKk)
 
 ## 9. Steps for Installation:
-Follow the Project's Wiki page for step-by-step instructions: 
+Follow the Project's Wiki page for step-by-step instructions to setup Lustre on Kubernetes: 
 
 [https://github.com/BU-NU-CLOUD-F19/Cloud-Native_high-performance_computing/wiki/Installation-steps](https://github.com/BU-NU-CLOUD-F19/Cloud-Native_high-performance_computing/wiki/Installation-steps)
