@@ -155,18 +155,18 @@ Demo on *11/22* .
 - Understanding Rook framework and how Ceph leverages it for its filesystem
 - Building an operator within Rook framework to interact with KubeVirt
 
-## 8. Demo slides:
-- [Demo 1 - 09/27/2019](https://docs.google.com/presentation/d/11-5E0pl9JrQ1s5jjbWnUuhI7mBM081c694kGdY1zb0s/edit?usp=sharing)
+## 8. Presentations:
+- [Demo 1 Presentation- 09/27/2019](https://docs.google.com/presentation/d/11-5E0pl9JrQ1s5jjbWnUuhI7mBM081c694kGdY1zb0s/edit?usp=sharing)
 
-- [Demo 2 - 10/09/2019](https://docs.google.com/presentation/d/16h66UZD1-1A3WeCJlkk5Czx8uli1WVLX_mfRJjoSNdE/edit#slide=id.p)
+- [Demo 2 Presentation- 10/09/2019](https://docs.google.com/presentation/d/16h66UZD1-1A3WeCJlkk5Czx8uli1WVLX_mfRJjoSNdE/edit#slide=id.p)
 
-- [Paper Presentation- 10/22/2019](https://docs.google.com/presentation/d/1pHBd9kxckNLg6qRDKbj5swUbpeb2MqQmD2AWmgGmLv4/edit#slide=id.g6240183895_1_7)
+- [BigTable Paper Presentation- 10/22/2019](https://docs.google.com/presentation/d/1pHBd9kxckNLg6qRDKbj5swUbpeb2MqQmD2AWmgGmLv4/edit#slide=id.g6240183895_1_7)
 
-- [Demo 3 - 10/24/2019](https://docs.google.com/presentation/d/1l06Gs6PNi8ent285efJvWWkberFa2y6y_yWkRt6yyko/edit?usp=sharing)
+- [Demo 3 Presentation- 10/24/2019](https://docs.google.com/presentation/d/1l06Gs6PNi8ent285efJvWWkberFa2y6y_yWkRt6yyko/edit?usp=sharing)
 
-- [Demo 4 - 11/08/2019](https://docs.google.com/presentation/d/1bmxDqdsMl1rL9_8-XkGlVrLt9L2k6OvBasVC9A0ClVQ/edit?usp=sharing)
+- [Demo 4 Presentation- 11/08/2019](https://docs.google.com/presentation/d/1bmxDqdsMl1rL9_8-XkGlVrLt9L2k6OvBasVC9A0ClVQ/edit?usp=sharing)
 
-- [Demo 5 - 11/22/2019](https://docs.google.com/presentation/d/1_NF0_1Ef_oC6dsKKs7F9-0UFvqM82DBtuqp75yzzdFg/edit?usp=sharing)
+- [Demo 5 Presentation- 11/22/2019](https://docs.google.com/presentation/d/1_NF0_1Ef_oC6dsKKs7F9-0UFvqM82DBtuqp75yzzdFg/edit?usp=sharing)
 
 - [Final Demo Presentation - 12/04/2019](https://docs.google.com/presentation/d/16BJXdME0qAWGi8UW8wj0pyzReCXGA-SoYrnJfIRMKsM/edit#slide=id.p)
 
