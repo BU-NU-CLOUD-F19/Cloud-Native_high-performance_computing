@@ -168,7 +168,7 @@ Demo on *11/22* .
 
 - [Demo 5 - 11/22/2019](https://docs.google.com/presentation/d/1_NF0_1Ef_oC6dsKKs7F9-0UFvqM82DBtuqp75yzzdFg/edit?usp=sharing)
 
-- [Final Demo - 12/04/2019](https://youtu.be/jqhDoW_2EKk)
+- [Final Demo - 12/04/2019](https://docs.google.com/presentation/d/16BJXdME0qAWGi8UW8wj0pyzReCXGA-SoYrnJfIRMKsM/edit?usp=sharing)
 
 ## 9. Steps for Installation:
 Follow the Project's Wiki page for step-by-step instructions to setup Lustre on Kubernetes: 
